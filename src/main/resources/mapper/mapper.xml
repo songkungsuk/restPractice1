@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.game.team5.mapper.UserInfoMapper">
+	<select id="selectUserInfos" resultType="com.game.team5.vo.UserInfoVO">
+		SELECT * FROM user_info
+	</select>
+	
+	<select id="selectUserInfo" resultType="com.game.team5.vo.UserInfoVO">
+		SELECT UI_NUM, UI_NAME, UI_ID, UI_PWD FROM user_info WHERE UI_NUM=#{uiNum};
+	</select>
+	
+	<insert id="insertUserInfo">
+		INSERT INTO USER_INFO(UI_NAME, UI_ID, UI_PWD)
+		VALUES(#{uiName}, #{uiId}, #{uiPwd});
+	</insert>
+	
+	<update id="updateUserInfo">
+		UPDATE user_info SET ui_name = #{uiName}, ui_id=#{uiId}, ui_pwd=#{uiPwd} WHERE UI_NUM=#{uiNum};
+	</update>
+	
+	<delete id="deleteUserInfo">
+		DELETE FROM user_info WHERE ui_num = #{uiNum};
+	</delete>
+</mapper>
