@@ -38,7 +38,6 @@ public class UserInfoController {
 	}
 	
 	@PutMapping("/user-infos")
-
 	public int updateUserInfo(@RequestBody UserInfoVO user) {
 		return uiService.updateUserInfo(user);
 	}
