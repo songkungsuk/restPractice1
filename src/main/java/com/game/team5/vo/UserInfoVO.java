@@ -8,4 +8,5 @@ public class UserInfoVO {
 	private String uiName;
 	private String uiId;
 	private String uiPwd;
+	private String token;
 }
