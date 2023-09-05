@@ -38,7 +38,8 @@ public class UserInfoController {
 	}
 	
 	@PutMapping("/user-infos")
-	public int updateUserInfo(UserInfoVO user) {
+
+	public int updateUserInfo(@RequestBody UserInfoVO user) {
 		return uiService.updateUserInfo(user);
 	}
 	
@@ -46,6 +47,5 @@ public class UserInfoController {
 	public int deleteUserInfo(@PathVariable int uiNum) {
 		return uiService.deleteUserinfo(uiNum);
 	}
-	
 	
 }
